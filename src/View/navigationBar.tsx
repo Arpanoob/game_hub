@@ -1,0 +1,11 @@
+import { HStack, Image } from "@chakra-ui/react";
+import React from "react";
+import logo from "../assets/logo.webp";
+
+export default function NavigationBar() {
+  return (
+    <HStack>
+      <Image boxSize="60px" src={logo} />
+    </HStack>
+  );
+}
