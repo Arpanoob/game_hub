@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import api_client from "../servises/api_client";
 import { CanceledError } from "axios";
 
-interface Game {
+export interface Game {
   id: number;
   name: string;
+  background_image:string
 }
 
 interface FetchGamesResponser {
@@ -12,7 +13,7 @@ interface FetchGamesResponser {
   results: Game[];
 }
 
-interface UseGamesResult {
+export interface UseGamesResult {
   games: Game[];
   error: string;
 }
