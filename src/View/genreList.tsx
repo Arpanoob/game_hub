@@ -1,6 +1,6 @@
 import React from "react";
 import { Genre } from "../model/useGenre";
-import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
 import GetCroppedUrl from "../servises/image_url";
 interface props {
   genre: Genre[];
@@ -9,8 +9,10 @@ interface props {
 }
 
 function genreList({ genre, isLoading, error }: props) {
+  if (error) return null;
+  if (isLoading) return <Spinner marginY={10} />;
   return (
-    <List width={"200px"}>
+    <List>
       {genre.map((gen) => (
         <ListItem key={gen.id} padding="5px">
           <HStack>

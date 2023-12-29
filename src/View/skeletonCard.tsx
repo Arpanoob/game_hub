@@ -5,7 +5,7 @@ function skeletonCard() {
   return (
     <Card>
       <Skeleton borderRadius={10} height="200px" />
-      <CardBody>
+      <CardBody paddingY={10}>
         <SkeletonText />
       </CardBody>
     </Card>
