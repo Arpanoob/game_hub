@@ -6,7 +6,7 @@ import NavigationBar from "./navigationBar";
 import GameGrid from "./gameGrid";
 import { UseGamesResult } from "../model/useGames";
 
-function gridLayout({ error, games }: UseGamesResult) {
+function gridLayout({ error, games,isLoading }: UseGamesResult) {
   return (
     <div>
       <Grid
@@ -20,7 +20,7 @@ function gridLayout({ error, games }: UseGamesResult) {
           <GridItem area="aside">aside</GridItem>
         </Show>
         <GridItem area="main">
-          <GameGrid error={error} games={games} />
+          <GameGrid error={error} games={games} isLoading={isLoading} />
         </GridItem>
       </Grid>
     </div>

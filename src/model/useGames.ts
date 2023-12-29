@@ -26,14 +26,17 @@ export interface FetchGamesResponser {
 export interface UseGamesResult {
   games: Game[];
   error: string;
+  isLoading:boolean;
 }
 
 function useGames(): UseGamesResult {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
-
+  const [isLoading,setIsLoading]=useState(false);
   useEffect(() => {
     const controller = new AbortController();
+    setIsLoading(true);
+
     console.log("games");
     const fetchData = async () => {
       try {
@@ -43,6 +46,8 @@ function useGames(): UseGamesResult {
 
         setGames(response.data.results);
         console.log(games);
+        setIsLoading(false)
+
       } catch (err) {
         if (err instanceof CanceledError) {
           // Request was canceled, do nothing
@@ -63,6 +68,7 @@ function useGames(): UseGamesResult {
   return {
     games,
     error,
+    isLoading,
   };
 }
 
