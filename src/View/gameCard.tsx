@@ -6,7 +6,7 @@ import CriticScore from "../View/criticScore";
 import getCroppedUrl from "../servises/image_url";
 function gameCard({ game }: { game: Game }) {
   return (
-    <Card borderRadius={10} width="300px" overflow={"hidden"}>
+    <Card>
       <Image src={getCroppedUrl(game.background_image)} overflow="hidden" />
       <CardBody paddingY={10}>
         <Heading fontSize="2xl">{game.name}</Heading>
