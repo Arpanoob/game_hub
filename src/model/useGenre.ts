@@ -3,11 +3,7 @@ import useData from './useData'
 export interface Genre {
   id: number;
   name: string;
-}
-
-export interface FetchGenreResponser {
-  count: number;
-  results: Genre[];
+  image_background:string;
 }
 
 function useGenre(){

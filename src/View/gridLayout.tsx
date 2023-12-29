@@ -13,12 +13,13 @@ function gridLayout({ error, games, isLoading }: UseGamesResult) {
       <Grid
         templateAreas={{ lg: `"nav nav" "aside main"`, base: `"nav" "main"` }}
         paddingTop="0px"
+        templateColumns={{ base: "1fr", lg: "200px 1fr" }}
       >
         <GridItem area="nav">
           <NavigationBar />
         </GridItem>
         <Show above="lg">
-          <GridItem area="aside">
+          <GridItem area="aside" paddingX={5}>
             <Genre />
           </GridItem>
         </Show>
