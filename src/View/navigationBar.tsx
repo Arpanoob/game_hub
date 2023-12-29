@@ -5,7 +5,7 @@ import ColorMode from "./colorMode";
 
 export default function NavigationBar() {
   return (
-    <HStack>
+    <HStack justifyContent="space-between">
       <Image boxSize="60px" src={logo} />
       <ColorMode />
     </HStack>

@@ -4,17 +4,9 @@ import { Grid, GridItem, Show } from "@chakra-ui/react";
 
 import NavigationBar from "./navigationBar";
 import GameGrid from "./gameGrid";
+import { UseGamesResult } from "../model/useGames";
 
-interface Game {
-  id: number;
-  name: string;
-}
-interface results {
-  error: string;
-  games: Game[];
-}
-
-function gridLayout({ error, games }: results) {
+function gridLayout({ error, games }: UseGamesResult) {
   return (
     <div>
       <Grid

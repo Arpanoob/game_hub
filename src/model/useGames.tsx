@@ -15,9 +15,10 @@ export interface Game {
   name: string;
   background_image: string;
   parent_platforms:platform[];
+  metacritic:number;
 }
 
-interface FetchGamesResponser {
+export interface FetchGamesResponser {
   count: number;
   results: Game[];
 }
