@@ -5,8 +5,9 @@ import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavigationBar from "./navigationBar";
 import GameGrid from "./gameGrid";
 import { UseGamesResult } from "../model/useGames";
+import Genre from "../viewModel/Genre";
 
-function gridLayout({ error, games,isLoading }: UseGamesResult) {
+function gridLayout({ error, games, isLoading }: UseGamesResult) {
   return (
     <div>
       <Grid
@@ -17,7 +18,9 @@ function gridLayout({ error, games,isLoading }: UseGamesResult) {
           <NavigationBar />
         </GridItem>
         <Show above="lg">
-          <GridItem area="aside">aside</GridItem>
+          <GridItem area="aside">
+            <Genre />
+          </GridItem>
         </Show>
         <GridItem area="main">
           <GameGrid error={error} games={games} isLoading={isLoading} />
