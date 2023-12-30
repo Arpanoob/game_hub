@@ -7,7 +7,13 @@ import GameGrid from "./gameGrid";
 import { UseGamesResult } from "../model/useGames";
 import Genre from "../viewModel/Genre";
 
-function gridLayout({ error, games, isLoading }: UseGamesResult) {
+function gridLayout({
+  error,
+  games,
+  isLoading,
+  selectedGenre,
+  setSelectedGenre,
+}: UseGamesResult) {
   return (
     <div>
       <Grid
@@ -20,11 +26,20 @@ function gridLayout({ error, games, isLoading }: UseGamesResult) {
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
-            <Genre />
+            <Genre
+              setSelectedGenre={setSelectedGenre}
+              selectedGenre={selectedGenre}
+            />
           </GridItem>
         </Show>
         <GridItem area="main">
-          <GameGrid error={error} games={games} isLoading={isLoading} />
+          <GameGrid
+            error={error}
+            games={games}
+            isLoading={isLoading}
+            setSelectedGenre={setSelectedGenre}
+            selectedGenre={selectedGenre}
+          />
         </GridItem>
       </Grid>
     </div>

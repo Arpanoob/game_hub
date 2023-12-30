@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api_client from "../servises/api_client";
 import { CanceledError } from "axios";
 import useData from "./useData";
+import { Genre } from "./useGenre";
 
 interface plate{
   id:number;
@@ -23,15 +24,20 @@ export interface UseGamesResult {
   games: Game[];
   error: string;
   isLoading:boolean;
+  selectedGenre:Genre | null;
+  setSelectedGenre:(genre:Genre)=>void;
 }
 
 function useGames(): UseGamesResult {
-  const {data,isLoading,error}=useData<Game>("/games");
+  const [selectedGenre,setSelectedGenre]=useState<Genre|null>(null);
+  const {data,isLoading,error}=useData<Game>("/games",{params:{genres:selectedGenre?.id}},selectedGenre?selectedGenre.id:undefined);
 
   return {
     games:data,
     error,
     isLoading,
+    selectedGenre,
+    setSelectedGenre
   };
 }
 
