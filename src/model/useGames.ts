@@ -20,29 +20,30 @@ export interface Game {
   parent_platforms:platform[];
   metacritic:number;
 }
- 
+ export interface GameQuery{
+  genre:Genre|null;
+  platform:plateformm|null;
+ }
 export interface UseGamesResult {
   games: Game[];
   error: string;
   isLoading:boolean;
-  selectedGenre:Genre | null;
-  setSelectedGenre:(genre:Genre)=>void;
-  setSelectedPlatform:(p:plateformm)=>void;
+  gameQuery:GameQuery;
+  setGameQuery:(q:GameQuery)=>void;
 }
 
 function useGames(): UseGamesResult {
-  const [selectedPlatform,setSelectedPlatform]=useState<plateformm|null>(null);
-  const [selectedGenre,setSelectedGenre]=useState<Genre|null>(null);
-  console.log("platfrom",selectedPlatform);
-  const {data,isLoading,error}=useData<Game>("/games",{params:{genres:selectedGenre?.id,parent_platforms:selectedPlatform?.id}},[selectedGenre?.id,selectedPlatform?.id]);
+  const [gameQuery,setGameQuery]=useState<GameQuery>({} as GameQuery);
+  const {data,isLoading,error}=useData<Game>("/games",
+  {params:{genres:gameQuery.genre?.id,parent_platforms:gameQuery.platform?.id}},
+  [gameQuery.genre?.id,gameQuery.platform?.id]);
 
   return {
     games:data,
     error,
     isLoading,
-    selectedGenre,
-    setSelectedGenre,
-    setSelectedPlatform
+    gameQuery,
+    setGameQuery
   };
 }
 

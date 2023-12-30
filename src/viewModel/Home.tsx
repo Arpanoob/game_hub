@@ -5,18 +5,16 @@ function Home() {
     error,
     games,
     isLoading,
-    selectedGenre,
-    setSelectedGenre,
-    setSelectedPlatform,
+    gameQuery,
+    setGameQuery
   } = useGrid();
   return (
     <GridLayout
       error={error}
       games={games}
       isLoading={isLoading}
-      setSelectedGenre={setSelectedGenre}
-      selectedGenre={selectedGenre}
-      setSelectedPlatform={setSelectedPlatform}
+      gameQuery={gameQuery}
+      setGameQuery={setGameQuery}
     />
   );
 }

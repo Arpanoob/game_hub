@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { plateformm } from "../model/usePlatform";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
+import { GameQuery } from "../model/useGames";
 interface props {
   plateforms: plateformm[];
   error: string;
-  setSelectedPlatform: (p: plateformm | null) => void;
+  gameQuery: GameQuery;
+  setGameQuery: (p: GameQuery) => void;
 }
-function platform({ plateforms, error, setSelectedPlatform }: props) {
+function plaatform({ plateforms, error, setGameQuery, gameQuery }: props) {
   const [chossenPlatform, setChossenPlatform] = useState("Platform");
   if (error) return null;
   return (
@@ -19,7 +21,7 @@ function platform({ plateforms, error, setSelectedPlatform }: props) {
         <MenuItem
           onClick={() => {
             setChossenPlatform("Platform");
-            setSelectedPlatform(null);
+            setGameQuery({ ...gameQuery, platform: null });
           }}
         >
           none
@@ -27,7 +29,7 @@ function platform({ plateforms, error, setSelectedPlatform }: props) {
         {plateforms.map((plateform) => (
           <MenuItem
             onClick={() => {
-              setSelectedPlatform(plateform);
+              setGameQuery({ ...gameQuery, platform: plateform });
               setChossenPlatform(plateform.name);
             }}
           >
@@ -39,4 +41,4 @@ function platform({ plateforms, error, setSelectedPlatform }: props) {
   );
 }
 
-export default platform;
+export default plaatform;

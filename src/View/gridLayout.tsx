@@ -12,9 +12,8 @@ function gridLayout({
   error,
   games,
   isLoading,
-  selectedGenre,
-  setSelectedGenre,
-  setSelectedPlatform
+  gameQuery,
+  setGameQuery,
 }: UseGamesResult) {
   return (
     <div>
@@ -28,10 +27,7 @@ function gridLayout({
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
-            <Genre
-              setSelectedGenre={setSelectedGenre}
-              selectedGenre={selectedGenre}
-            />
+            <Genre gameQuery={gameQuery} setGameQuery={setGameQuery} />
           </GridItem>
         </Show>
         <GridItem area="main">
@@ -42,15 +38,14 @@ function gridLayout({
               alignSelf: "self-start",
             }}
           >
-            <Platform  setSelectedPlatform={setSelectedPlatform} />
+            <Platform gameQuery={gameQuery} setGameQuery={setGameQuery} />
           </div>
           <GameGrid
             error={error}
             games={games}
             isLoading={isLoading}
-            setSelectedGenre={setSelectedGenre}
-            selectedGenre={selectedGenre}
-            setSelectedPlatform={setSelectedPlatform}
+            gameQuery={gameQuery}
+            setGameQuery={setGameQuery}
           />
         </GridItem>
       </Grid>

@@ -2,12 +2,14 @@ import React from "react";
 
 import usePlatform, { plateformm } from "../model/usePlatform";
 import Platform from "../View/platform";
+import { GameQuery } from "../model/useGames";
 interface props{
-  setSelectedPlatform:(p:plateformm)=>void;
+  setGameQuery:(p:GameQuery)=>void;
+  gameQuery:GameQuery;
 }
-function platform({ setSelectedPlatform }: props) {
+function platform({ setGameQuery,gameQuery }: props) {
   const { plateforms, error, isLoading } = usePlatform();
-  return <Platform plateforms={plateforms} error={error} setSelectedPlatform={setSelectedPlatform}/>;
+  return <Platform gameQuery={gameQuery} plateforms={plateforms} error={error} setGameQuery={setGameQuery}/>;
 }
 
 export default platform;

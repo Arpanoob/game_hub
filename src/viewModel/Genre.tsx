@@ -1,21 +1,22 @@
 import React from "react";
 import useGenre, { Genre } from "../model/useGenre";
 import GenreList from "../View/genreList";
+import { GameQuery } from "../model/useGames";
 
 interface props {
-  selectedGenre: Genre | null;
-  setSelectedGenre: (genre: Genre) => void;
+gameQuery:GameQuery
+setGameQuery:(q:GameQuery)=>void;
 }
 
-function Genree({ setSelectedGenre, selectedGenre }: props) {
+function Genree({gameQuery,setGameQuery}: props) {
   const { genre, isLoading, error } = useGenre();
   return (
     <GenreList
       genre={genre}
       isLoading={isLoading}
       error={error}
-      setSelectedGenre={setSelectedGenre}
-      selectedGenre={selectedGenre}
+      gameQuery={gameQuery}
+      setGameQuery={setGameQuery}
     />
   );
 }

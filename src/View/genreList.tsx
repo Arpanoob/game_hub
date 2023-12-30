@@ -10,24 +10,25 @@ import {
   Text,
 } from "@chakra-ui/react";
 import GetCroppedUrl from "../servises/image_url";
+import { GameQuery } from "../model/useGames";
 interface props {
   genre: Genre[];
   isLoading: boolean;
   error: string;
-  selectedGenre: Genre | null;
-  setSelectedGenre: (genre: Genre) => void;
+  gameQuery: GameQuery;
+  setGameQuery: (q: GameQuery) => void;
 }
 
 function genreList({
   genre,
+  gameQuery,
+  setGameQuery,
   isLoading,
   error,
-  setSelectedGenre,
-  selectedGenre,
 }: props) {
   if (error) return null;
   if (isLoading) return <Spinner marginY={10} />;
-  console.log("selectedGerne", selectedGenre);
+  console.log("selectedGerne", gameQuery.genre);
   return (
     <List>
       {genre.map((gen) => (
@@ -39,12 +40,12 @@ function genreList({
               borderRadius={8}
             />
             <Button
-              fontWeight={gen.id === selectedGenre?.id ? "bold" : "normal"}
+              fontWeight={gen.id === gameQuery.genre?.id ? "bold" : "normal"}
               fontSize="lg"
               variant="link"
               onClick={() => {
                 console.log("=", gen.id);
-                setSelectedGenre(gen);
+                setGameQuery({ ...gameQuery, genre: gen });
               }}
             >
               {gen.name}
