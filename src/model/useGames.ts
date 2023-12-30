@@ -30,7 +30,7 @@ export interface UseGamesResult {
 
 function useGames(): UseGamesResult {
   const [selectedGenre,setSelectedGenre]=useState<Genre|null>(null);
-  const {data,isLoading,error}=useData<Game>("/games",{params:{genres:selectedGenre?.id}},selectedGenre?selectedGenre.id:undefined);
+  const {data,isLoading,error}=useData<Game>("/games",{params:{genres:selectedGenre?.id}},[selectedGenre?.id]);
 
   return {
     games:data,

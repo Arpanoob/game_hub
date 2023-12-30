@@ -27,6 +27,7 @@ function genreList({
 }: props) {
   if (error) return null;
   if (isLoading) return <Spinner marginY={10} />;
+  console.log("selectedGerne", selectedGenre);
   return (
     <List>
       {genre.map((gen) => (
@@ -37,7 +38,15 @@ function genreList({
               boxSize={"32px"}
               borderRadius={8}
             />
-            <Button fontSize="lg" variant="link" onClick={()=>setSelectedGenre(gen)}>
+            <Button
+              fontWeight={gen.id === selectedGenre?.id ? "bold" : "normal"}
+              fontSize="lg"
+              variant="link"
+              onClick={() => {
+                console.log("=", gen.id);
+                setSelectedGenre(gen);
+              }}
+            >
               {gen.name}
             </Button>
           </HStack>

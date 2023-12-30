@@ -12,7 +12,7 @@ export interface UseResult<T> {
   isLoading:boolean;
 }
 
-function useData<T>(endpoint:string,requestConfig?:AxiosRequestConfig,dep?:number): UseResult<T> {
+function useData<T>(endpoint:string,requestConfig?:AxiosRequestConfig,dep?:any[]): UseResult<T> {
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [isLoading,setIsLoading]=useState(false);
@@ -29,9 +29,7 @@ function useData<T>(endpoint:string,requestConfig?:AxiosRequestConfig,dep?:numbe
         });
 
         setData(response.data.results);
-        console.log("data",data)
 
-        console.log(data);
         setIsLoading(false)
 
       } catch (err) {
@@ -49,7 +47,7 @@ function useData<T>(endpoint:string,requestConfig?:AxiosRequestConfig,dep?:numbe
     return () => {
       controller.abort(); // Abort the request on component unmount
     };
-  }, dep?[dep]:[]);
+  }, dep?dep:[]);
 
   return {
     data,

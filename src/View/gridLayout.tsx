@@ -6,6 +6,7 @@ import NavigationBar from "./navigationBar";
 import GameGrid from "./gameGrid";
 import { UseGamesResult } from "../model/useGames";
 import Genre from "../viewModel/Genre";
+import Platform from "../viewModel/Platform";
 
 function gridLayout({
   error,
@@ -33,6 +34,15 @@ function gridLayout({
           </GridItem>
         </Show>
         <GridItem area="main">
+          <div
+            style={{
+              display: "flex",
+              marginLeft: "10px",
+              alignSelf: "self-start",
+            }}
+          >
+            <Platform />
+          </div>
           <GameGrid
             error={error}
             games={games}
