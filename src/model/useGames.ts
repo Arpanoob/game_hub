@@ -3,6 +3,7 @@ import api_client from "../servises/api_client";
 import { CanceledError } from "axios";
 import useData from "./useData";
 import { Genre } from "./useGenre";
+import { plateformm } from "./usePlatform";
 
 interface plate{
   id:number;
@@ -26,18 +27,22 @@ export interface UseGamesResult {
   isLoading:boolean;
   selectedGenre:Genre | null;
   setSelectedGenre:(genre:Genre)=>void;
+  setSelectedPlatform:(p:plateformm)=>void;
 }
 
 function useGames(): UseGamesResult {
+  const [selectedPlatform,setSelectedPlatform]=useState<plateformm|null>(null);
   const [selectedGenre,setSelectedGenre]=useState<Genre|null>(null);
-  const {data,isLoading,error}=useData<Game>("/games",{params:{genres:selectedGenre?.id}},[selectedGenre?.id]);
+  console.log("platfrom",selectedPlatform);
+  const {data,isLoading,error}=useData<Game>("/games",{params:{genres:selectedGenre?.id,parent_platforms:selectedPlatform?.id}},[selectedGenre?.id,selectedPlatform?.id]);
 
   return {
     games:data,
     error,
     isLoading,
     selectedGenre,
-    setSelectedGenre
+    setSelectedGenre,
+    setSelectedPlatform
   };
 }
 

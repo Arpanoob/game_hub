@@ -1,22 +1,38 @@
-import React from "react";
-import usePlatform from "../model/usePlatform";
-import { plateform } from "../model/usePlatform";
+import React, { useState } from "react";
+import { plateformm } from "../model/usePlatform";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 interface props {
-  plateforms: plateform[];
+  plateforms: plateformm[];
   error: string;
+  setSelectedPlatform: (p: plateformm | null) => void;
 }
-function platform({ plateforms, error }: props) {
+function platform({ plateforms, error, setSelectedPlatform }: props) {
+  const [chossenPlatform, setChossenPlatform] = useState("Platform");
   if (error) return null;
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />} >
-        Plateforms
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+        {chossenPlatform}
       </MenuButton>
       <MenuList>
+        <MenuItem
+          onClick={() => {
+            setChossenPlatform("Platform");
+            setSelectedPlatform(null);
+          }}
+        >
+          none
+        </MenuItem>
         {plateforms.map((plateform) => (
-          <MenuItem>{plateform.name}</MenuItem>
+          <MenuItem
+            onClick={() => {
+              setSelectedPlatform(plateform);
+              setChossenPlatform(plateform.name);
+            }}
+          >
+            {plateform.name}
+          </MenuItem>
         ))}
       </MenuList>
     </Menu>

@@ -1,7 +1,7 @@
 import React from 'react'
 import useData from './useData';
 
-export interface plateform{
+export interface plateformm{
     id:number;
     name:string;
     slug:string;
@@ -9,7 +9,7 @@ export interface plateform{
 
 
 function usePlatform() {
-    const{data,error,isLoading}=useData<plateform>('/platforms/lists/parents');
+    const{data,error,isLoading}=useData<plateformm>('/platforms/lists/parents');
   return {
     plateforms:data,
     error,

@@ -14,6 +14,7 @@ function gridLayout({
   isLoading,
   selectedGenre,
   setSelectedGenre,
+  setSelectedPlatform
 }: UseGamesResult) {
   return (
     <div>
@@ -41,7 +42,7 @@ function gridLayout({
               alignSelf: "self-start",
             }}
           >
-            <Platform />
+            <Platform  setSelectedPlatform={setSelectedPlatform} />
           </div>
           <GameGrid
             error={error}
@@ -49,6 +50,7 @@ function gridLayout({
             isLoading={isLoading}
             setSelectedGenre={setSelectedGenre}
             selectedGenre={selectedGenre}
+            setSelectedPlatform={setSelectedPlatform}
           />
         </GridItem>
       </Grid>

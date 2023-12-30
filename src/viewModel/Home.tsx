@@ -1,8 +1,14 @@
 import GridLayout from "../View/gridLayout";
 import useGrid from "../model/useGames";
 function Home() {
-  const { error, games, isLoading, selectedGenre, setSelectedGenre } =
-    useGrid();
+  const {
+    error,
+    games,
+    isLoading,
+    selectedGenre,
+    setSelectedGenre,
+    setSelectedPlatform,
+  } = useGrid();
   return (
     <GridLayout
       error={error}
@@ -10,6 +16,7 @@ function Home() {
       isLoading={isLoading}
       setSelectedGenre={setSelectedGenre}
       selectedGenre={selectedGenre}
+      setSelectedPlatform={setSelectedPlatform}
     />
   );
 }
