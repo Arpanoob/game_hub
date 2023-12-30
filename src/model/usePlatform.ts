@@ -9,7 +9,7 @@ export interface plateformm{
 
 
 function usePlatform() {
-    const{data,error,isLoading}=useData<plateformm>('/platforms/lists/parents');
+    const{data,error,isLoading}=useData<plateformm>('/platforms');
   return {
     plateforms:data,
     error,

@@ -23,6 +23,7 @@ export interface Game {
  export interface GameQuery{
   genre:Genre|null;
   platform:plateformm|null;
+  sortOrder:string|null
  }
 export interface UseGamesResult {
   games: Game[];
@@ -35,8 +36,8 @@ export interface UseGamesResult {
 function useGames(): UseGamesResult {
   const [gameQuery,setGameQuery]=useState<GameQuery>({} as GameQuery);
   const {data,isLoading,error}=useData<Game>("/games",
-  {params:{genres:gameQuery.genre?.id,parent_platforms:gameQuery.platform?.id}},
-  [gameQuery.genre?.id,gameQuery.platform?.id]);
+  {params:{genres:gameQuery.genre?.id,parent_platforms:gameQuery.platform?.id,ordering:gameQuery.sortOrder}},
+  [gameQuery]);
 
   return {
     games:data,

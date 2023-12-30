@@ -4,8 +4,10 @@ import GameCard from "../View/gameCard";
 import { UseGamesResult } from "../model/useGames";
 import SkeletonCard from "./skeletonCard";
 import GameCardContainer from "./gameCardContainer";
+import { MdHourglassEmpty, MdOutlineHourglassEmpty } from "react-icons/md";
+import { FaBatteryEmpty } from "react-icons/fa";
 function GameGrid({ error, games, isLoading }: UseGamesResult) {
-  const Skeletons = [1, 2, 3, 4, 5, 6,7,8,9,10];
+  const Skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <>
       {isLoading && (
@@ -35,6 +37,20 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
           ))}
         </SimpleGrid>
       }
+      {games.length === 0 && (
+        <div
+          style={{
+            display: "flex",
+            marginTop: "200px",
+            justifyContent: "center",
+            alignSelf: "center",
+          }}
+        >
+          <MdOutlineHourglassEmpty width="1fr" height="1fr" />
+          <br />
+          <h3> Nothing to show </h3>
+        </div>
+      )}
     </>
   );
 }

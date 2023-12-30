@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import GetCroppedUrl from "../servises/image_url";
 import { GameQuery } from "../model/useGames";
+import { MdHourglassEmpty } from "react-icons/md";
 interface props {
   genre: Genre[];
   isLoading: boolean;
@@ -28,31 +29,37 @@ function genreList({
 }: props) {
   if (error) return null;
   if (isLoading) return <Spinner marginY={10} />;
-  console.log("selectedGerne", gameQuery.genre);
+
   return (
     <List>
-      {genre.map((gen) => (
-        <ListItem key={gen.id} padding="5px">
-          <HStack>
-            <Image
-              src={GetCroppedUrl(gen.image_background)}
-              boxSize={"32px"}
-              borderRadius={8}
-            />
-            <Button
-              fontWeight={gen.id === gameQuery.genre?.id ? "bold" : "normal"}
-              fontSize="lg"
-              variant="link"
-              onClick={() => {
-                console.log("=", gen.id);
-                setGameQuery({ ...gameQuery, genre: gen });
-              }}
-            >
-              {gen.name}
-            </Button>
-          </HStack>
-        </ListItem>
-      ))}
+      {genre.length === 0 && (
+        <div>
+          <MdHourglassEmpty />
+        </div>
+      )}
+      {genre.length !== 0 &&
+        genre.map((gen) => (
+          <ListItem key={gen.id} padding="5px">
+            <HStack>
+              <Image
+                src={GetCroppedUrl(gen.image_background)}
+                boxSize={"32px"}
+                borderRadius={8}
+              />
+              <Button
+                fontWeight={gen.id === gameQuery.genre?.id ? "bold" : "normal"}
+                fontSize="lg"
+                variant="link"
+                onClick={() => {
+                  console.log("=", gen.id);
+                  setGameQuery({ ...gameQuery, genre: gen });
+                }}
+              >
+                {gen.name}
+              </Button>
+            </HStack>
+          </ListItem>
+        ))}
     </List>
   );
 }

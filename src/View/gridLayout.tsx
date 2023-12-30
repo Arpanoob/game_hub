@@ -1,12 +1,13 @@
 import React from "react";
 
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 
 import NavigationBar from "./navigationBar";
 import GameGrid from "./gameGrid";
 import { UseGamesResult } from "../model/useGames";
 import Genre from "../viewModel/Genre";
 import Platform from "../viewModel/Platform";
+import SortOrder from "./sortOrder";
 
 function gridLayout({
   error,
@@ -38,7 +39,10 @@ function gridLayout({
               alignSelf: "self-start",
             }}
           >
-            <Platform gameQuery={gameQuery} setGameQuery={setGameQuery} />
+            <HStack>
+              <Platform gameQuery={gameQuery} setGameQuery={setGameQuery} />
+              <SortOrder gameQuery={gameQuery} setGameQuery={setGameQuery} />
+            </HStack>
           </div>
           <GameGrid
             error={error}
