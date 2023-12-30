@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { Image, SimpleGrid, Text } from "@chakra-ui/react";
 
 import GameCard from "../View/gameCard";
 import { UseGamesResult } from "../model/useGames";
@@ -6,6 +6,7 @@ import SkeletonCard from "./skeletonCard";
 import GameCardContainer from "./gameCardContainer";
 import { MdHourglassEmpty, MdOutlineHourglassEmpty } from "react-icons/md";
 import { FaBatteryEmpty } from "react-icons/fa";
+import empty from "../assets/ONKJBH0.jpg";
 function GameGrid({ error, games, isLoading }: UseGamesResult) {
   const Skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
@@ -46,9 +47,7 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
             alignSelf: "center",
           }}
         >
-          <MdOutlineHourglassEmpty width="1fr" height="1fr" />
-          <br />
-          <h3> Nothing to show </h3>
+          <Image src={empty} width="200px" height="200px" />
         </div>
       )}
     </>
