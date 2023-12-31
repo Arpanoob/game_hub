@@ -4,7 +4,8 @@ import { Game } from "../model/useGames";
 import PlatformIconsList from "./platformIconsList";
 import CriticScore from "../View/criticScore";
 import getCroppedUrl from "../servises/image_url";
-import empty from "../assets/ONKJBH0.jpg";
+import empty from "../assets/ONKJBH0.webp";
+import Emoji from "./emoji";
 function gameCard({ game }: { game: Game }) {
   return (
     <Card>
@@ -23,6 +24,7 @@ function gameCard({ game }: { game: Game }) {
           <PlatformIconsList parent_platforms={game.parent_platforms} />
           <CriticScore score={game.metacritic} />
         </HStack>
+        <Emoji rating={game.rating_top} />
       </CardBody>
     </Card>
   );

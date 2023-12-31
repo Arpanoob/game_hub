@@ -19,6 +19,7 @@ export interface Game {
   background_image: string;
   parent_platforms:platform[];
   metacritic:number;
+  rating_top:number;
 }
  export interface GameQuery{
   genre:Genre|null;

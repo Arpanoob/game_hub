@@ -6,7 +6,7 @@ import SkeletonCard from "./skeletonCard";
 import GameCardContainer from "./gameCardContainer";
 import { MdHourglassEmpty, MdOutlineHourglassEmpty } from "react-icons/md";
 import { FaBatteryEmpty } from "react-icons/fa";
-import empty from "../assets/ONKJBH0.jpg";
+import empty from "../assets/ONKJBH0.webp";
 function GameGrid({ error, games, isLoading }: UseGamesResult) {
   const Skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
@@ -24,7 +24,7 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
           ))}
         </SimpleGrid>
       )}
-      {error && <Text>{error}</Text>}
+      {!isLoading && error && <Text>{error}</Text>}
       {
         <SimpleGrid
           padding={"10px"}
@@ -38,7 +38,7 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
           ))}
         </SimpleGrid>
       }
-      {games.length === 0 && (
+      {!isLoading && !error && games.length === 0 && (
         <div
           style={{
             display: "flex",
