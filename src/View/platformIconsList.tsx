@@ -19,6 +19,7 @@ function platformIconsList({
 }: {
   parent_platforms: platform[];
 }) {
+  if (!parent_platforms) return "";
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
     playstation: FaPlaystation,

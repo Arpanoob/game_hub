@@ -24,7 +24,7 @@ function gridLayout({
         templateColumns={{ base: "1fr", lg: "260px 1fr" }}
       >
         <GridItem area="nav">
-          <NavigationBar />
+          <NavigationBar  gameQuery={gameQuery} setGameQuery={setGameQuery} />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
