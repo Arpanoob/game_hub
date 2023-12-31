@@ -31,7 +31,7 @@ function platformIconsList({
     web: BsGlobe,
   };
   return (
-    <HStack margin={1}>
+    <HStack margin={1} >
       {parent_platforms.map((x) => (
         <Icon as={iconMap[x.platform.slug]} color="gray.500" />
       ))}

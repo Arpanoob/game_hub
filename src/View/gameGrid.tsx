@@ -15,7 +15,7 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
         <SimpleGrid
           padding={"10px"}
           columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-          spacing={3}
+          spacing={6}
         >
           {Skeletons.map((skl) => (
             <GameCardContainer>
@@ -29,7 +29,7 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
         <SimpleGrid
           padding={"10px"}
           columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-          spacing={3}
+          spacing={6}
         >
           {games.map((x) => (
             <GameCardContainer>
