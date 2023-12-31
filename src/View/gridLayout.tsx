@@ -8,6 +8,7 @@ import { UseGamesResult } from "../model/useGames";
 import Genre from "../viewModel/Genre";
 import Platform from "../viewModel/Platform";
 import SortOrder from "./sortOrder";
+import GameHeading from "./gameHeading";
 
 function gridLayout({
   error,
@@ -24,7 +25,7 @@ function gridLayout({
         templateColumns={{ base: "1fr", lg: "260px 1fr" }}
       >
         <GridItem area="nav">
-          <NavigationBar  gameQuery={gameQuery} setGameQuery={setGameQuery} />
+          <NavigationBar gameQuery={gameQuery} setGameQuery={setGameQuery} />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
@@ -37,8 +38,13 @@ function gridLayout({
               display: "flex",
               marginLeft: "10px",
               alignSelf: "self-start",
+              alignItems: "flex-start",
+              flexDirection: "column",
+
+              paddingBottom: "30px",
             }}
           >
+            <GameHeading gameQuery={gameQuery} />
             <HStack>
               <Platform gameQuery={gameQuery} setGameQuery={setGameQuery} />
               <SortOrder gameQuery={gameQuery} setGameQuery={setGameQuery} />
