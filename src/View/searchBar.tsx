@@ -11,7 +11,6 @@ function searchBar({ gameQuery, setGameQuery }: props) {
   const search = useRef<HTMLInputElement>(null);
   const select = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      console.log(search.current?.value);
       setGameQuery({
         ...gameQuery,
         searchQuery: search.current?.value ? search.current?.value : null,

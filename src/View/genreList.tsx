@@ -61,7 +61,6 @@ function genreList({
                   whiteSpace={"normal"}
                   textAlign={"left"}
                   onClick={() => {
-                    console.log("=", gen.id);
                     setGameQuery({ ...gameQuery, genre: gen });
                   }}
                 >

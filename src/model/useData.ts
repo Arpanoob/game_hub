@@ -20,8 +20,6 @@ function useData<T>(endpoint:string,requestConfig?:AxiosRequestConfig,dep?:any[]
     setData([]);
     const controller = new AbortController();
     setIsLoading(true);
-
-    console.log("games");
     const fetchData = async () => {
       try {
         const response = await api_client.get<FetchGamesResponser<T>>(endpoint, {

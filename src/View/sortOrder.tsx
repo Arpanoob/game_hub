@@ -22,9 +22,10 @@ function sortOrder({ setGameQuery, gameQuery }: props) {
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         Order By : {chossen}
       </MenuButton>
-      <MenuList>    
+      <MenuList>
         {sortOrder.map((order) => (
           <MenuItem
+            key={order.lable}
             onClick={() => {
               setGameQuery({ ...gameQuery, sortOrder: order.value });
               setChossen(order.lable);

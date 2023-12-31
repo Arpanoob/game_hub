@@ -18,8 +18,8 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
           spacing={6}
         >
           {Skeletons.map((skl) => (
-            <GameCardContainer>
-              <SkeletonCard key={skl} />
+            <GameCardContainer key={skl}>
+              <SkeletonCard />
             </GameCardContainer>
           ))}
         </SimpleGrid>
@@ -32,8 +32,8 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
           spacing={6}
         >
           {games.map((x) => (
-            <GameCardContainer>
-              <GameCard key={x.id} game={x} />
+            <GameCardContainer key={x.id}>
+              <GameCard game={x} />
             </GameCardContainer>
           ))}
         </SimpleGrid>

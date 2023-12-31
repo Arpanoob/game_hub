@@ -28,6 +28,7 @@ function plaatform({ plateforms, error, setGameQuery, gameQuery }: props) {
         </MenuItem>
         {plateforms.map((plateform) => (
           <MenuItem
+            key={plateform.id}
             onClick={() => {
               setGameQuery({ ...gameQuery, platform: plateform });
               setChossenPlatform(plateform.name);
