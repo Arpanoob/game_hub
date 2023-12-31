@@ -47,7 +47,7 @@ function GameGrid({ error, games, isLoading }: UseGamesResult) {
             alignSelf: "center",
           }}
         >
-          <Image src={empty} width="200px" height="200px" />
+          <Image src={empty} width="600px" height="300px" />
         </div>
       )}
     </>
