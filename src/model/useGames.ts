@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AxiosClient from "../servises/api_client";
 import { FetchGamesResponser } from "./useData";
 import { Genre } from "./useGenre";
-import { plateformm } from "./usePlatform";
+import { plateformm } from "./usePlatforms";
 import { FetchNextPageOptions, InfiniteData, InfiniteQueryObserverBaseResult, useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
 interface plate {

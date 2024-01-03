@@ -1,6 +1,6 @@
 import React from "react";
 
-import usePlatform, { plateformm } from "../model/usePlatform";
+import usePlatform, { plateformm } from "../model/usePlatforms";
 import Platform from "../View/platform";
 import { GameQuery } from "../model/useGames";
 import { FetchGamesResponser } from "../model/useData";
@@ -13,7 +13,7 @@ function platform({ setGameQuery, gameQuery }: props) {
   return (
     <Platform
       gameQuery={gameQuery}
-      plateforms={data as FetchGamesResponser<plateformm> }
+      plateforms={data as FetchGamesResponser<plateformm>}
       error={error as Error}
       setGameQuery={setGameQuery}
     />

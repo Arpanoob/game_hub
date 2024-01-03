@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { plateformm } from "../model/usePlatform";
+import { plateformm } from "../model/usePlatforms";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { GameQuery } from "../model/useGames";
