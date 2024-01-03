@@ -56,7 +56,7 @@ function useGames(){
                 page:pageParam}}),
     cacheTime: 60 * 1000, // Adjust cache time as needed
     staleTime: 10 * 60 * 1000, // Set a reasonable stale time
-      getNextPageParam:(LastPage,AllPages)=>{ return LastPage.next?AllPages.length+1:undefined; }
+      getNextPageParam:(LastPage,AllPages)=>{console.log(LastPage,"asdfghjkl",AllPages); return LastPage.next?AllPages.length+1:undefined; }
   })
 
   return {
