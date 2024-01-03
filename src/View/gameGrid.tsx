@@ -22,7 +22,14 @@ function GameGrid({
     (total, page) => total + page?.results?.length,
     0
   );
-  console.log("fetchedsoFar", fetchedsoFar);
+  console.log(
+    !isLoading && !!!error && !!games?.pages?.length,
+    "fetchedsoFar",
+    fetchedsoFar,
+    games?.pages?.length,
+    !!!error,
+    isLoading
+  );
   return (
     <Box padding={"10px"}>
       <InfiniteScroll
@@ -60,19 +67,6 @@ function GameGrid({
                 ))}
               </React.Fragment>
             ))}
-
-            {!isLoading && !error && games?.pages?.length === 0 && (
-              <div
-                style={{
-                  display: "flex",
-                  marginTop: "200px",
-                  justifyContent: "center",
-                  alignSelf: "center",
-                }}
-              >
-                <Image src={empty} width="600px" height="300px" />
-              </div>
-            )}
           </SimpleGrid>
         }
         {hasNextPage && (
@@ -81,6 +75,20 @@ function GameGrid({
           </Button>
         )}
       </InfiniteScroll>
+      
+      {!isLoading && !!!error && !!games?.pages?.length && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            alignContent: "center",
+            justifyItems: "center",
+          }}
+        >
+          <Image src={empty} alignSelf="center" width="600px" height="300px" />
+        </div>
+      )}
     </Box>
   );
 }

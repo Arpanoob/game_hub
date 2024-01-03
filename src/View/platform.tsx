@@ -3,9 +3,10 @@ import { plateformm } from "../model/usePlatform";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { GameQuery } from "../model/useGames";
+import { FetchGamesResponser } from "../model/useData";
 interface props {
-  plateforms: plateformm[] ;
-  error: Error ;
+  plateforms: FetchGamesResponser<plateformm>;
+  error: Error;
   gameQuery: GameQuery;
   setGameQuery: (p: GameQuery) => void;
 }
@@ -21,16 +22,16 @@ function plaatform({ plateforms, error, setGameQuery, gameQuery }: props) {
         <MenuItem
           onClick={() => {
             setChossenPlatform("Platform");
-            setGameQuery({ ...gameQuery, platform: null });
+            setGameQuery({ ...gameQuery });
           }}
         >
           none
         </MenuItem>
-        {plateforms?.map((plateform) => (
+        {plateforms?.results?.map((plateform) => (
           <MenuItem
             key={plateform.id}
             onClick={() => {
-              setGameQuery({ ...gameQuery, platform: plateform });
+              setGameQuery({ ...gameQuery, platformId: plateform.id });
               setChossenPlatform(plateform.name);
             }}
           >

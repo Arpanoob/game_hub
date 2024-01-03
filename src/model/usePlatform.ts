@@ -1,14 +1,12 @@
-import React from 'react'
-import useData, { FetchGamesResponser } from './useData';
-import { QueryKey, useQuery } from '@tanstack/react-query';
-import AxiosClient, {axiosInstance} from '../servises/api_client';
+import { FetchGamesResponser } from './useData';
+import { useQuery } from '@tanstack/react-query';
+import AxiosClient from '../servises/api_client';
 
 export interface plateformm{
     id:number;
     name:string;
     slug:string;
 }
-const platformsQueryKey: QueryKey = ['platforms'];
 const ApiClient = new AxiosClient<plateformm>("/platforms");
 
 
