@@ -55,14 +55,14 @@ function genreList({
                 />
                 <Button
                   fontWeight={
-                    gen.id === gameQuery.genre?.id ? "bold" : "normal"
+                    gen.id === gameQuery.genreId ? "bold" : "normal"
                   }
                   fontSize="lg"
                   variant="link"
                   whiteSpace={"normal"}
                   textAlign={"left"}
                   onClick={() => {
-                    setGameQuery({ ...gameQuery, genre: gen });
+                    setGameQuery({ ...gameQuery, genreId: gen.id });
                   }}
                 >
                   {gen.name}

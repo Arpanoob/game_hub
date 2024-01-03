@@ -25,7 +25,7 @@ export interface Game {
 }
 
 export interface GameQuery {
-  genre: Genre | null;
+  genreId?:number;
   platform: plateformm | null;
   sortOrder: string | null;
   searchQuery: string | null;
@@ -49,7 +49,7 @@ function useGames(){
   const { data, isLoading, error,isFetchingNextPage,hasNextPage,fetchNextPage } =
    useInfiniteQuery<FetchGamesResponser<Game>,Error>({
     queryKey:['games',gameQuery],
-    queryFn:({pageParam=1})=>ApiClient.getAll( {params:{genres:gameQuery.genre?.id,
+    queryFn:({pageParam=1})=>ApiClient.getAll( {params:{genres:gameQuery.genreId,
                 parent_platforms:gameQuery.platform?.id,
                 ordering:gameQuery.sortOrder,
                 search:gameQuery.searchQuery,
