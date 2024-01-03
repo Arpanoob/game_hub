@@ -13,10 +13,11 @@ import {
 import GetCroppedUrl from "../servises/image_url";
 import { GameQuery } from "../model/useGames";
 import { MdHourglassEmpty } from "react-icons/md";
+import { FetchGamesResponser } from "../model/useData";
 interface props {
-  genre: Genre[];
+  genre: FetchGamesResponser<Genre> ;
   isLoading: boolean;
-  error: string;
+  error: Error|null;
   gameQuery: GameQuery;
   setGameQuery: (q: GameQuery) => void;
 }
@@ -37,13 +38,13 @@ function genreList({
         Genres
       </Heading>
       <List>
-        {genre.length === 0 && (
+        {genre?.results?.length === 0 && (
           <div>
             <MdHourglassEmpty />
           </div>
         )}
-        {genre.length !== 0 &&
-          genre.map((gen) => (
+        {genre?.results?.length !== 0 &&
+          genre?.results?.map((gen) => (
             <ListItem key={gen.id} padding="5px">
               <HStack>
                 <Image

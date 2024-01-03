@@ -4,8 +4,8 @@ import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { GameQuery } from "../model/useGames";
 interface props {
-  plateforms: plateformm[];
-  error: string;
+  plateforms: plateformm[] ;
+  error: Error ;
   gameQuery: GameQuery;
   setGameQuery: (p: GameQuery) => void;
 }
@@ -26,7 +26,7 @@ function plaatform({ plateforms, error, setGameQuery, gameQuery }: props) {
         >
           none
         </MenuItem>
-        {plateforms.map((plateform) => (
+        {plateforms?.map((plateform) => (
           <MenuItem
             key={plateform.id}
             onClick={() => {

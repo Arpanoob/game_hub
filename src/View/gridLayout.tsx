@@ -16,6 +16,9 @@ function gridLayout({
   isLoading,
   gameQuery,
   setGameQuery,
+  isFetchingNextPage,
+  hasNextPage,
+  fetchNextPage
 }: UseGamesResult) {
   return (
     <div>
@@ -56,6 +59,9 @@ function gridLayout({
             isLoading={isLoading}
             gameQuery={gameQuery}
             setGameQuery={setGameQuery}
+            isFetchingNextPage={isFetchingNextPage}
+            hasNextPage={hasNextPage}
+            fetchNextPage={fetchNextPage}
           />
         </GridItem>
       </Grid>

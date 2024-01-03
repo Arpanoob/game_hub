@@ -2,6 +2,7 @@ import React from "react";
 import useGenre, { Genre } from "../model/useGenre";
 import GenreList from "../View/genreList";
 import { GameQuery } from "../model/useGames";
+import { FetchGamesResponser } from "../model/useData";
 
 interface props {
 gameQuery:GameQuery
@@ -9,12 +10,12 @@ setGameQuery:(q:GameQuery)=>void;
 }
 
 function Genree({gameQuery,setGameQuery}: props) {
-  const { genre, isLoading, error } = useGenre();
+  const { data, isLoading, error  } = useGenre();
   return (
     <GenreList
-      genre={genre}
+      genre={data as FetchGamesResponser<Genre>}
       isLoading={isLoading}
-      error={error}
+      error={error }
       gameQuery={gameQuery}
       setGameQuery={setGameQuery}
     />

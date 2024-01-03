@@ -14,12 +14,12 @@ import { BsGlobe } from "react-icons/bs";
 import { platform } from "../model/useGames";
 import { HStack, Icon, Text } from "@chakra-ui/react";
 import { IconType } from "react-icons";
-function platformIconsList({
-  parent_platforms,
-}: {
+
+interface props {
   parent_platforms: platform[];
-}) {
-  if (!parent_platforms) return "";
+}
+function platformIconsList({ parent_platforms }: props) {
+  if (!parent_platforms) return null;
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
     playstation: FaPlaystation,

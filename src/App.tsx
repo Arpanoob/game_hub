@@ -1,14 +1,16 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import { Grid, GridItem, Show } from "@chakra-ui/react";
-import NavigationBar from "./View/navigationBar";
-import GameGrid from "./View/gameGrid";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Home from "./viewModel/Home";
 
 function App() {
   return (
-    <Home/>
+    <QueryClientProvider client={new QueryClient()}>
+      <Home />
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
 

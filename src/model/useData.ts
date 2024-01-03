@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import api_client from "../servises/api_client";
+import {axiosInstance} from "../servises/api_client";
 import { AxiosRequestConfig, CanceledError } from "axios";
 export interface FetchGamesResponser<T> {
   count: number;
+  next:string|null;
   results: T[];
 }
 
@@ -22,7 +23,7 @@ function useData<T>(endpoint:string,requestConfig?:AxiosRequestConfig,dep?:any[]
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        const response = await api_client.get<FetchGamesResponser<T>>(endpoint, {
+        const response = await axiosInstance.get<FetchGamesResponser<T>>(endpoint, {
           signal: controller.signal,...requestConfig
         });
 
