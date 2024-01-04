@@ -11,7 +11,7 @@ export default createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, path: "", element: <Home /> },
-      { path: "games/:id", element: <GameDetails /> },
+      { path: "games/:slug", element: <GameDetails /> },
     ],
   },
 ]);

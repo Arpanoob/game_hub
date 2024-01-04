@@ -31,7 +31,7 @@ function GameGrid({
     isLoading
   );
   return (
-    <Box padding={"10px"}>
+    <Box padding={"10px"} overflow={"hidden"} >
       <InfiniteScroll
         dataLength={fetchedsoFar || 0} //it takle total number of card so far
         hasMore={hasNextPage} //IT TAKE BOOLEAN VALUE WITCH TELL TERE BARE MORE OR NOT
@@ -75,7 +75,7 @@ function GameGrid({
           </Button>
         )}
       </InfiniteScroll>
-      
+
       {!isLoading && !!!error && !!games?.pages?.length && (
         <div
           style={{
