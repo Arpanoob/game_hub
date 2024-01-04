@@ -14,21 +14,17 @@ import GetCroppedUrl from "../servises/image_url";
 import { GameQuery } from "../model/useGames";
 import { MdHourglassEmpty } from "react-icons/md";
 import { FetchGamesResponser } from "../model/useData";
+import useGameQueryStore from "../model/store/store";
 interface props {
-  genre: FetchGamesResponser<Genre> ;
+  genre: FetchGamesResponser<Genre>;
   isLoading: boolean;
-  error: Error|null;
-  gameQuery: GameQuery;
-  setGameQuery: (q: GameQuery) => void;
+  error: Error | null;
 }
 
-function genreList({
-  genre,
-  gameQuery,
-  setGameQuery,
-  isLoading,
-  error,
-}: props) {
+function genreList({ genre, isLoading, error }: props) {
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
+  const { gameQuery } = useGameQueryStore();
+
   if (error) return null;
   if (isLoading) return <Spinner marginY={10} />;
 
@@ -54,15 +50,13 @@ function genreList({
                   borderRadius={8}
                 />
                 <Button
-                  fontWeight={
-                    gen.id === gameQuery.genreId ? "bold" : "normal"
-                  }
+                  fontWeight={gen.id === gameQuery.genreId ? "bold" : "normal"}
                   fontSize="lg"
                   variant="link"
                   whiteSpace={"normal"}
                   textAlign={"left"}
                   onClick={() => {
-                    setGameQuery({ ...gameQuery, genreId: gen.id });
+                    setGenreId(gen.id);
                   }}
                 >
                   {gen.name}

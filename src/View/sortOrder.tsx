@@ -3,12 +3,12 @@ import { plateformm } from "../model/usePlatforms";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import { GameQuery } from "../model/useGames";
-interface props {
-  gameQuery: GameQuery;
-  setGameQuery: (p: GameQuery) => void;
-}
-function sortOrder({ setGameQuery, gameQuery }: props) {
+import useGameQueryStore from "../model/store/store";
+
+function sortOrder() {
   const [chossen, setChossen] = useState("Relevance");
+  const setSortOrder=useGameQueryStore(s=>s.setSortOrder);
+
   const sortOrder = [
     { value: "", lable: "Relevance" },
     { value: "-added", lable: "Data added" },
@@ -27,7 +27,7 @@ function sortOrder({ setGameQuery, gameQuery }: props) {
           <MenuItem
             key={order.lable}
             onClick={() => {
-              setGameQuery({ ...gameQuery, sortOrder: order.value });
+              setSortOrder( order.value);
               setChossen(order.lable);
             }}
           >

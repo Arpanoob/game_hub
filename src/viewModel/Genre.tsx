@@ -4,20 +4,13 @@ import GenreList from "../View/genreList";
 import { GameQuery } from "../model/useGames";
 import { FetchGamesResponser } from "../model/useData";
 
-interface props {
-gameQuery:GameQuery
-setGameQuery:(q:GameQuery)=>void;
-}
-
-function Genree({gameQuery,setGameQuery}: props) {
+function Genree() {
   const { data, isLoading, error  } = useGenre();
   return (
     <GenreList
       genre={data as FetchGamesResponser<Genre>}
       isLoading={isLoading}
       error={error }
-      gameQuery={gameQuery}
-      setGameQuery={setGameQuery}
     />
   );
 }

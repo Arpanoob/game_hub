@@ -11,8 +11,6 @@ function Home() {
     error,
     games,
     isLoading,
-    gameQuery,
-    setGameQuery,
     isFetchingNextPage,
     hasNextPage,
     fetchNextPage,
@@ -22,8 +20,6 @@ function Home() {
       error={error}
       games={games as InfiniteData<FetchGamesResponser<Game>>}
       isLoading={isLoading}
-      gameQuery={gameQuery}
-      setGameQuery={setGameQuery}
       isFetchingNextPage={isFetchingNextPage}
       hasNextPage={hasNextPage as boolean}
       fetchNextPage={fetchNextPage}

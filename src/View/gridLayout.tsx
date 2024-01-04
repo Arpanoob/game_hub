@@ -14,8 +14,6 @@ function gridLayout({
   error,
   games,
   isLoading,
-  gameQuery,
-  setGameQuery,
   isFetchingNextPage,
   hasNextPage,
   fetchNextPage
@@ -28,11 +26,11 @@ function gridLayout({
         templateColumns={{ base: "1fr", lg: "200px 1fr" }}
       >
         <GridItem area="nav">
-          <NavigationBar gameQuery={gameQuery} setGameQuery={setGameQuery} />
+          <NavigationBar  />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
-            <Genre gameQuery={gameQuery} setGameQuery={setGameQuery} />
+            <Genre />
           </GridItem>
         </Show>
         <GridItem area="main">
@@ -47,18 +45,16 @@ function gridLayout({
               paddingBottom: "30px",
             }}
           >
-            <GameHeading gameQuery={gameQuery} />
+            <GameHeading  />
             <HStack>
-              <Platform gameQuery={gameQuery} setGameQuery={setGameQuery} />
-              <SortOrder gameQuery={gameQuery} setGameQuery={setGameQuery} />
+              <Platform  />
+              <SortOrder  />
             </HStack>
           </div>
           <GameGrid
             error={error}
             games={games}
             isLoading={isLoading}
-            gameQuery={gameQuery}
-            setGameQuery={setGameQuery}
             isFetchingNextPage={isFetchingNextPage}
             hasNextPage={hasNextPage}
             fetchNextPage={fetchNextPage}

@@ -4,6 +4,7 @@ import { FetchGamesResponser } from "./useData";
 import { Genre } from "./useGenre";
 import { plateformm } from "./usePlatforms";
 import { FetchNextPageOptions, InfiniteData, InfiniteQueryObserverBaseResult, useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import useGameQueryStore from "./store/store";
 
 interface plate {
   id: number;
@@ -27,25 +28,23 @@ export interface Game {
 export interface GameQuery {
   genreId?:number;
   platformId?: number;
-  sortOrder: string | null;
-  searchQuery: string | null;
+  sortOrder?: string ;
+  searchQuery?: string ;
 }
 
 export interface UseGamesResult {
   games: InfiniteData<FetchGamesResponser<Game>>;
   error: Error | null;
   isLoading: boolean;
-  gameQuery: GameQuery;
   isFetchingNextPage:boolean;
   hasNextPage:boolean,
   fetchNextPage: (options?: FetchNextPageOptions) => Promise<InfiniteQueryObserverBaseResult<any, Error>>;
-  setGameQuery: (q: GameQuery) => void;
 }
 
 const ApiClient = new AxiosClient<Game>("/games");
 
 function useGames(){
-   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+   const {gameQuery}= useGameQueryStore()
   const { data, isLoading, error,isFetchingNextPage,hasNextPage,fetchNextPage } =
    useInfiniteQuery<FetchGamesResponser<Game>,Error>({
     queryKey:['games',gameQuery],
@@ -63,8 +62,6 @@ function useGames(){
     games: data,
     error: error || null,
     isLoading,
-    gameQuery,
-    setGameQuery,
     isFetchingNextPage,
     hasNextPage,
     fetchNextPage

@@ -1,20 +1,14 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
-import { GameQuery } from "../model/useGames";
+import useGameQueryStore from "../model/store/store";
 
-interface props {
-  gameQuery: GameQuery;
-  setGameQuery: (q: GameQuery) => void;
-}
-function searchBar({ gameQuery, setGameQuery }: props) {
+function searchBar() {
   const search = useRef<HTMLInputElement>(null);
+  const setSearchQuery=useGameQueryStore(s=>s.setSearchQuery);
   const select = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      setGameQuery({
-        ...gameQuery,
-        searchQuery: search.current?.value ? search.current?.value : null,
-      });
+      setSearchQuery(search.current?.value?search.current.value:null)
     }
   };
   return (

@@ -4,10 +4,11 @@ import useGames, { GameQuery } from "../model/useGames";
 import useGenre from "../model/useGenre";
 import usePlatform from "../model/usePlatform";
 import useGenr from "../model/useGenr";
-interface props {
-  gameQuery: GameQuery;
-}
-function gameHeading({ gameQuery }: props) {
+import useGameQueryStore from "../model/store/store";
+
+function gameHeading() {
+  const {gameQuery}=useGameQueryStore();
+
   const { platform } = usePlatform(gameQuery.platformId as number);
   const { genre } = useGenr(gameQuery.genreId as number);
   const heading = `${platform?.name || ""} ${genre?.name || ""}  Games`;
