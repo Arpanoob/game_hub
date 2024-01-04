@@ -5,10 +5,10 @@ import useGameQueryStore from "../model/store/store";
 
 function searchBar() {
   const search = useRef<HTMLInputElement>(null);
-  const setSearchQuery=useGameQueryStore(s=>s.setSearchQuery);
+  const setSearchQuery = useGameQueryStore((s) => s.setSearchQuery);
   const select = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      setSearchQuery(search.current?.value?search.current.value:null)
+      setSearchQuery(search.current?.value ? search.current.value : undefined);
     }
   };
   return (

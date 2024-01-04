@@ -6,7 +6,7 @@ interface GameQyeryStore{
     setGenreId:(gId:number)=>void;
     setSortOrder:(s:string)=>void;
     setPlatforms:(pId:number)=>void;
-    setSearchQuery:(sQ:string)=>void
+    setSearchQuery:(sQ?:string)=>void
 }
  const useGameQueryStore =create<GameQyeryStore>(set=>({
    gameQuery:{},
