@@ -16,18 +16,15 @@ function gridLayout({
   isLoading,
   isFetchingNextPage,
   hasNextPage,
-  fetchNextPage
+  fetchNextPage,
 }: UseGamesResult) {
   return (
     <div>
       <Grid
-        templateAreas={{ lg: `"nav nav" "aside main"`, base: `"nav" "main"` }}
+        templateAreas={{ lg: `"aside main"`, base: `"main"` }}
         paddingTop="0px"
         templateColumns={{ base: "1fr", lg: "200px 1fr" }}
       >
-        <GridItem area="nav">
-          <NavigationBar  />
-        </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
             <Genre />
@@ -45,10 +42,10 @@ function gridLayout({
               paddingBottom: "30px",
             }}
           >
-            <GameHeading  />
+            <GameHeading />
             <HStack>
-              <Platform  />
-              <SortOrder  />
+              <Platform />
+              <SortOrder />
             </HStack>
           </div>
           <GameGrid
