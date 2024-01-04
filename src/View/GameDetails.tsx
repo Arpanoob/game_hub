@@ -3,7 +3,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import AxiosClient from "../servises/api_client";
 import { Game } from "../model/useGames";
-import { Spinner } from "@chakra-ui/react";
+import { Box, Heading, Spinner, Text } from "@chakra-ui/react";
+import ExpandableText from "./ExpandableText";
 
 const ApiClient = new AxiosClient<Game>("/games");
 const GameDetails = () => {
@@ -12,8 +13,14 @@ const GameDetails = () => {
     queryKey: ["game details", slug],
     queryFn: () => ApiClient.get(slug!),
   });
+
   if (isLoading) <Spinner />;
-  return <div>Hi bro {slug + "" + data?.name}</div>;
+  return (
+    <Box textAlign="left">
+      <Heading>{data?.name}</Heading>
+      <ExpandableText>{data?.description_raw} </ExpandableText>
+    </Box>
+  );
 };
 
 export default GameDetails;
