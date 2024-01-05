@@ -9,7 +9,7 @@ const limit = 1000;
 const ExpandableText = ({ children }: props) => {
   const [expanded, setExpanded] = useState(false);
   const child = children?.toString();
-  if (!child) return "";
+  if (!child) return null;
   if (child.length <= limit) return <Text>{child}</Text>;
   const summry = child.substring(0, limit);
   return (

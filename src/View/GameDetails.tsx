@@ -25,7 +25,7 @@ const GameDetails = () => {
     queryKey: ["game details", slug],
     queryFn: () => ApiClient.get(slug!),
   });
-  if (!data) return "";
+  if (!data) return null;
   if (isLoading) <Spinner />;
   return (
     <>
