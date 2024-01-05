@@ -4,11 +4,11 @@ import React, { ReactNode, useState } from "react";
 interface props {
   children: ReactNode;
 }
-const limit = 300;
+const limit = 1000;
 
 const ExpandableText = ({ children }: props) => {
   const [expanded, setExpanded] = useState(false);
-  const child = children?.toString()
+  const child = children?.toString();
   if (!child) return "";
   if (child.length <= limit) return <Text>{child}</Text>;
   const summry = child.substring(0, limit);
