@@ -1,6 +1,6 @@
 import React from "react";
 import useTrailers from "../model/useTrailers";
-import { Spinner } from "@chakra-ui/react";
+import { Skeleton, Spinner } from "@chakra-ui/react";
 
 interface props {
   gameId: number;
@@ -8,7 +8,7 @@ interface props {
 const GameTrailer = ({ gameId }: props) => {
   const { data, isLoading } = useTrailers(gameId);
   console.log("vedio", data);
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <Skeleton height={"400px"} />;
   return (
     <video
       src={data?.results[0]?.data[480]}

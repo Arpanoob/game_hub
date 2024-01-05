@@ -2,11 +2,16 @@ import React from "react";
 import { Genre } from "../model/useGenre";
 import {
   Button,
+  Card,
+  CardBody,
   HStack,
   Heading,
   Image,
   List,
   ListItem,
+  Skeleton,
+  SkeletonCircle,
+  SkeletonText,
   Spinner,
   Text,
 } from "@chakra-ui/react";
@@ -26,7 +31,19 @@ function genreList({ genre, isLoading, error }: props) {
   const { gameQuery } = useGameQueryStore();
 
   if (error) return null;
-  if (isLoading) return <Spinner marginY={10} />;
+  if (isLoading)
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 20].map(
+      () => (
+        <Card m={2}>
+          <HStack>
+            <SkeletonCircle m={2}/>{" "}
+            <CardBody>
+              <SkeletonText noOfLines={2} lineHeight={1} spacing={1}/>
+            </CardBody>
+          </HStack>
+        </Card>
+      )
+    );
 
   return (
     <>

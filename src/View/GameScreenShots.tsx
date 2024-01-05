@@ -1,6 +1,6 @@
 import React from "react";
 import useScreenShots from "../model//useScreenShots";
-import { Image, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
+import { Image, SimpleGrid, Skeleton, Spinner, Text } from "@chakra-ui/react";
 
 interface props {
   gameId: number;
@@ -8,7 +8,15 @@ interface props {
 const GameScreenShots = ({ gameId }: props) => {
   const { data, isLoading } = useScreenShots(gameId);
   console.log("aa", data);
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <SimpleGrid>
+        {" "}
+        {[1, 2, 3, 4, 5, 6].map((p) => (
+          <Skeleton mt={1} height={"200"} />
+        ))}
+      </SimpleGrid>
+    );
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }}>
       {data?.results.map((r) => (
