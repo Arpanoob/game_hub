@@ -4,7 +4,7 @@ import React, { ReactNode, useState } from "react";
 interface props {
   children: ReactNode;
 }
-const limit = 1000;
+const limit = 300;
 
 const ExpandableText = ({ children }: props) => {
   const [expanded, setExpanded] = useState(false);

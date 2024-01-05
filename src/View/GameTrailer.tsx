@@ -7,12 +7,16 @@ interface props {
 }
 const GameTrailer = ({ gameId }: props) => {
   const { data, isLoading } = useTrailers(gameId);
-  console.log("aa", data);
+  console.log("vedio", data);
   if (isLoading) return <Spinner />;
   return (
     <video
       src={data?.results[0]?.data[480]}
-      poster={data?.results[0].preview}
+      poster={
+        data?.results.length !== 0
+          ? data?.results[0].preview
+          : "https://media.rawg.io/media/movies/955/9556607dec02bf324c87aa33bba2ed8e.jpg"
+      }
       controls
     ></video>
   );

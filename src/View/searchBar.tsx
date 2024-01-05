@@ -8,12 +8,14 @@ function searchBar() {
   const search = useRef<HTMLInputElement>(null);
   const setSearchQuery = useGameQueryStore((s) => s.setSearchQuery);
   const navigate = useNavigate();
+
   const select = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       setSearchQuery(search.current?.value ? search.current.value : undefined);
-      navigate("/");
     }
+    navigate("/");
   };
+
   return (
     <InputGroup>
       <InputLeftElement children={<BsSearch />} />

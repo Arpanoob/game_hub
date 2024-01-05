@@ -5,10 +5,11 @@ import ColorMode from "./colorMode";
 import SearchBar from "./searchBar";
 import { Link } from "react-router-dom";
 
+  
 export default function NavigationBar() {
   return (
     <HStack padding={"10px"}>
-      <Link to={"/"}>
+           <Link to={"/"}>
         <Image boxSize="60px" src={logo} objectFit={"cover"} />
       </Link>
 
