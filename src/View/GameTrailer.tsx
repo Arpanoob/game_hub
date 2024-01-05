@@ -7,6 +7,7 @@ interface props {
 }
 const GameTrailer = ({ gameId }: props) => {
   const { data, isLoading } = useTrailers(gameId);
+  console.log("aa", data);
   if (isLoading) return <Spinner />;
   return (
     <video

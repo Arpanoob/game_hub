@@ -9,6 +9,7 @@ import DefinationItems from "./DefinationItems";
 import CriticScore from "./criticScore";
 import GameAttribute from "./GameAttribute";
 import GameTrailer from "./GameTrailer";
+import GameScreenShots from "./GameScreenShots";
 
 const ApiClient = new AxiosClient<Game>("/games");
 const GameDetails = () => {
@@ -17,7 +18,7 @@ const GameDetails = () => {
     queryKey: ["game details", slug],
     queryFn: () => ApiClient.get(slug!),
   });
-  if (!data) return '';
+  if (!data) return "";
   if (isLoading) <Spinner />;
   return (
     <>
@@ -25,7 +26,8 @@ const GameDetails = () => {
         <Heading>{data?.name}</Heading>
         <ExpandableText>{data?.description_raw} </ExpandableText>
         <GameAttribute data={data} />
-        <GameTrailer gameId={data.id}/>
+        <GameTrailer gameId={data.id} />
+        <GameScreenShots gameId={data.id} />
       </Box>
     </>
   );
