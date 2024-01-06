@@ -1,11 +1,9 @@
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
-import AxiosClient from "../servises/api_client";
-import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
+import FetchGamesResponser from "../enteties/FetchGamesResponser";
 import useGameQueryStore from "./store/store";
 import { Game } from "../enteties/Game";
-
-const ApiClient = new AxiosClient<Game>("/games");
+import games from "../api/games";
 
 function useGames() {
   const { gameQuery } = useGameQueryStore();
@@ -19,7 +17,7 @@ function useGames() {
   } = useInfiniteQuery<FetchGamesResponser<Game>, Error>({
     queryKey: ["games", gameQuery],
     queryFn: ({ pageParam = 1 }) =>
-      ApiClient.getAll({
+      games().ApiClient.getAll({
         params: {
           genres: gameQuery.genreId,
           parent_platforms: gameQuery.platformId as number,

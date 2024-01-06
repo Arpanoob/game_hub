@@ -3,20 +3,18 @@ import { useQuery } from "@tanstack/react-query";
 
 import { Box, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 
-import AxiosClient from "../servises/api_client";
-import { Game } from "../enteties/Game";
 import ExpandableText from "./ExpandableText";
 import GameAttribute from "./GameAttribute";
 import GameTrailer from "./GameTrailer";
 import GameScreenShots from "./GameScreenShots";
 import SkeletonForGameDetails from "./SkeletonForGameDetails";
+import games from "../api/games";
 
-const ApiClient = new AxiosClient<Game>("/games");
 const GameDetails = () => {
   const { slug } = useParams();
   const { data, isLoading, error } = useQuery({
     queryKey: ["game details", slug],
-    queryFn: () => ApiClient.get(slug!),
+    queryFn: () => games().ApiClient.get(slug!),
   });
 
   if (isLoading) {

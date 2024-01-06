@@ -14,7 +14,7 @@ import {
 
 import { Genre } from "../enteties/Genre";
 import GetCroppedUrl from "../servises/image_url";
-import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
+import  FetchGamesResponser  from "../enteties/FetchGamesResponser";
 import useGameQueryStore from "../model/store/store";
 interface props {
   genre: FetchGamesResponser<Genre>;

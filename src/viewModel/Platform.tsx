@@ -1,7 +1,7 @@
 import usePlatform from "../model/usePlatforms";
 import { plateformm } from "../enteties/plateformm";
 import Platform from "../View/platform";
-import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
+import FetchGamesResponser from "../enteties/FetchGamesResponser";
 
 function platform() {
   const { data, error, isLoading } = usePlatform();

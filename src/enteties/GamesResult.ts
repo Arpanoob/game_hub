@@ -1,4 +1,4 @@
-import { FetchGamesResponser } from "./FetchGamesResponser";
+import FetchGamesResponser from "./FetchGamesResponser";
 import {
   FetchNextPageOptions,
   InfiniteData,

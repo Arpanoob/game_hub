@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
+import FetchGamesResponser from "../enteties/FetchGamesResponser";
 
 const axiosInstance = axios.create({
   baseURL: "https://api.rawg.io/api",

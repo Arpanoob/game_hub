@@ -1,7 +1,7 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { plateformm } from "../enteties/plateformm";
 import { BsChevronDown } from "react-icons/bs";
-import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
+import FetchGamesResponser from "../enteties/FetchGamesResponser";
 import useGameQueryStore from "../model/store/store";
 import usePlatform from "../model/usePlatform";
 interface props {
