@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+
 import AxiosClient from "../servises/api_client";
 import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
-import { plateformm } from "../enteties/plateformm";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import useGameQueryStore from "./store/store";
 import { Game } from "../enteties/Game";
 

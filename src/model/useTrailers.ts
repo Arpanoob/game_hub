@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+
 import AxiosClient from "../servises/api_client";
 import { Trailer } from "../enteties/Trailer";
 

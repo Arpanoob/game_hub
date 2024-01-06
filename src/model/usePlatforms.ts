@@ -1,5 +1,6 @@
 import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
 import { useQuery } from "@tanstack/react-query";
+
 import AxiosClient from "../servises/api_client";
 import { plateformm } from "../enteties/plateformm";
 
