@@ -8,7 +8,7 @@ import GameCard from "./gameCard";
 import { UseGamesResult } from "./GamesResult";
 import SkeletonCard from "./skeletonCard";
 import GameCardContainer from "./gameCardContainer";
-import empty from "../../../../assets/thumbs-up.webp";
+import empty from "../../../../assets/empty.webp";
 
 function GameGrid({
   error,
@@ -23,6 +23,7 @@ function GameGrid({
     (total, page) => total + page?.results?.length,
     0
   );
+  // console.log("as", games.pages, !games.pages.res);
   return (
     <Box padding={"10px"} overflow={"hidden"}>
       <InfiniteScroll
@@ -62,14 +63,9 @@ function GameGrid({
             ))}
           </SimpleGrid>
         }
-        {hasNextPage && (
-          <Button onClick={() => fetchNextPage()}>
-            {isFetchingNextPage ? "Loading" : "Load More"}
-          </Button>
-        )}
       </InfiniteScroll>
 
-      {!isLoading && !!!error && !!games?.pages?.length && (
+      {!isLoading && !!!fetchedsoFar && (
         <div
           style={{
             display: "flex",
@@ -79,7 +75,7 @@ function GameGrid({
             justifyItems: "center",
           }}
         >
-          <Image src={empty} alignSelf="center" width="600px" height="300px" />
+          <Image src={empty} alignSelf="center" width="400px" height="300px" />
         </div>
       )}
     </Box>

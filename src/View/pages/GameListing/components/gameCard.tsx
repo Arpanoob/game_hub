@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 
-import empty from "../../../../assets/thumbs-up.webp";
+import empty from "../../../../assets/empty.webp";
 import getCroppedUrl from "../../../../servises/image_url";
 import { Game } from "../../../../enteties/Game";
 import PlatformIconsList from "./platformIconsList";
