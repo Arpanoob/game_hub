@@ -32,17 +32,22 @@ function genreList({ genre, isLoading, error }: props) {
 
   if (error) return null;
   if (isLoading)
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 20].map(
-      () => (
-        <Card m={2}>
-          <HStack>
-            <SkeletonCircle m={2}/>{" "}
-            <CardBody>
-              <SkeletonText noOfLines={2} lineHeight={1} spacing={1}/>
-            </CardBody>
-          </HStack>
-        </Card>
-      )
+    return (
+      <>
+        {" "}
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 20].map(
+          () => (
+            <Card m={2}>
+              <HStack>
+                <SkeletonCircle m={2} />
+                <CardBody>
+                  <SkeletonText noOfLines={2} lineHeight={1} spacing={1} />
+                </CardBody>
+              </HStack>
+            </Card>
+          )
+        )}
+      </>
     );
 
   return (
