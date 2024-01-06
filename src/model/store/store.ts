@@ -1,13 +1,6 @@
 import { create } from "zustand";
-import { GameQuery } from "../useGames";
+import { GameQyeryStore } from "../../enteties/GameQyeryStore";
 
-interface GameQyeryStore {
-  gameQuery: GameQuery;
-  setGenreId: (gId: number) => void;
-  setSortOrder: (s: string) => void;
-  setPlatforms: (pId: number) => void;
-  setSearchQuery: (sQ?: string) => void;
-}
 const useGameQueryStore = create<GameQyeryStore>((set) => ({
   gameQuery: {},
   setGenreId: (gId) =>

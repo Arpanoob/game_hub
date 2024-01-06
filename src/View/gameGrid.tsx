@@ -1,7 +1,7 @@
 import { Box, Button, Image, SimpleGrid, Text } from "@chakra-ui/react";
 
 import GameCard from "../View/gameCard";
-import { UseGamesResult } from "../model/useGames";
+import { UseGamesResult } from "../enteties/GamesResult";
 import SkeletonCard from "./skeletonCard";
 import GameCardContainer from "./gameCardContainer";
 import { MdHourglassEmpty, MdOutlineHourglassEmpty } from "react-icons/md";
@@ -31,7 +31,7 @@ function GameGrid({
     isLoading
   );
   return (
-    <Box padding={"10px"} overflow={"hidden"} >
+    <Box padding={"10px"} overflow={"hidden"}>
       <InfiniteScroll
         dataLength={fetchedsoFar || 0} //it takle total number of card so far
         hasMore={hasNextPage} //IT TAKE BOOLEAN VALUE WITCH TELL TERE BARE MORE OR NOT

@@ -4,7 +4,7 @@ import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 
 import NavigationBar from "./navigationBar";
 import GameGrid from "./gameGrid";
-import { UseGamesResult } from "../model/useGames";
+import { UseGamesResult } from "../enteties/GamesResult";
 import Genre from "../viewModel/Genre";
 import Platform from "../viewModel/Platform";
 import SortOrder from "./sortOrder";

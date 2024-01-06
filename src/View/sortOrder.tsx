@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { plateformm } from "../model/usePlatforms";
+import { plateformm } from "../enteties/plateformm";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { GameQuery } from "../model/useGames";
+import { GameQuery } from "../enteties/GameQuery";
 import useGameQueryStore from "../model/store/store";
 
 function sortOrder() {
   const [chossen, setChossen] = useState("Relevance");
-  const setSortOrder=useGameQueryStore(s=>s.setSortOrder);
+  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
 
   const sortOrder = [
     { value: "", lable: "Relevance" },
@@ -27,7 +27,7 @@ function sortOrder() {
           <MenuItem
             key={order.lable}
             onClick={() => {
-              setSortOrder( order.value);
+              setSortOrder(order.value);
               setChossen(order.lable);
             }}
           >

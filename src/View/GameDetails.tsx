@@ -1,13 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import AxiosClient from "../servises/api_client";
-import { Game } from "../model/useGames";
-import {
-  Box,
-  GridItem,
-  Heading,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Game } from "../enteties/Game";
+import { Box, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 import ExpandableText from "./ExpandableText";
 
 import GameAttribute from "./GameAttribute";

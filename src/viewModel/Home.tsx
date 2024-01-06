@@ -4,8 +4,9 @@ import {
   InfiniteQueryObserverBaseResult,
 } from "@tanstack/react-query";
 import GridLayout from "../View/gridLayout";
-import useGrid, { Game } from "../model/useGames";
-import { FetchGamesResponser } from "../model/useData";
+import useGrid from "../model/useGames";
+import { Game } from "../enteties/Game";
+import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
 function Home() {
   const {
     error,
@@ -23,7 +24,7 @@ function Home() {
       isFetchingNextPage={isFetchingNextPage}
       hasNextPage={hasNextPage as boolean}
       fetchNextPage={fetchNextPage}
-      />
+    />
   );
 }
 

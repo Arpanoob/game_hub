@@ -1,61 +1,10 @@
 import React, { useEffect, useState } from "react";
 import AxiosClient from "../servises/api_client";
-import { FetchGamesResponser } from "./useData";
-import { Genre } from "./useGenre";
-import { plateformm } from "./usePlatforms";
-import {
-  FetchNextPageOptions,
-  InfiniteData,
-  InfiniteQueryObserverBaseResult,
-  useInfiniteQuery,
-  useQuery,
-} from "@tanstack/react-query";
+import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
+import { plateformm } from "../enteties/plateformm";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import useGameQueryStore from "./store/store";
-
-interface plate {
-  id: number;
-  slug: string;
-  name: string;
-}
-
-export interface platform {
-  platform: plate;
-}
-export interface publisher {
-  id: number;
-  slug: string;
-  name: string;
-}
-export interface Game {
-  id: number;
-  name: string;
-  slug: string;
-  genres: Genre[];
-  publishers: publisher[];
-  description_raw: string;
-  background_image: string;
-  parent_platforms: platform[];
-  metacritic: number;
-  rating_top: number;
-}
-
-export interface GameQuery {
-  genreId?: number;
-  platformId?: number;
-  sortOrder?: string;
-  searchQuery?: string;
-}
-
-export interface UseGamesResult {
-  games: InfiniteData<FetchGamesResponser<Game>>;
-  error: Error | null;
-  isLoading: boolean;
-  isFetchingNextPage: boolean;
-  hasNextPage: boolean;
-  fetchNextPage: (
-    options?: FetchNextPageOptions
-  ) => Promise<InfiniteQueryObserverBaseResult<any, Error>>;
-}
+import { Game } from "../enteties/Game";
 
 const ApiClient = new AxiosClient<Game>("/games");
 

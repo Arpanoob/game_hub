@@ -1,9 +1,10 @@
 import React from "react";
 
-import usePlatform, { plateformm } from "../model/usePlatforms";
+import usePlatform from "../model/usePlatforms";
+import { plateformm } from "../enteties/plateformm";
 import Platform from "../View/platform";
-import { GameQuery } from "../model/useGames";
-import { FetchGamesResponser } from "../model/useData";
+import { GameQuery } from "../enteties/GameQuery";
+import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
 
 function platform() {
   const { data, error, isLoading } = usePlatform();

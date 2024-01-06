@@ -1,5 +1,5 @@
 import React from "react";
-import { Genre } from "../model/useGenre";
+import { Genre } from "../enteties/Genre";
 import {
   Button,
   Card,
@@ -16,9 +16,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import GetCroppedUrl from "../servises/image_url";
-import { GameQuery } from "../model/useGames";
+import { GameQuery } from "../enteties/GameQuery";
 import { MdHourglassEmpty } from "react-icons/md";
-import { FetchGamesResponser } from "../model/useData";
+import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
 import useGameQueryStore from "../model/store/store";
 interface props {
   genre: FetchGamesResponser<Genre>;
