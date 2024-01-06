@@ -10,7 +10,7 @@ const GameAttribute = ({ data }: props) => {
     <SimpleGrid columns={2} as="dl">
       <DefinationItems tilte="Platforms">
         {data?.parent_platforms.map(({ platform }) => (
-          <Text>{platform.name}</Text>
+          <Text key={platform.id}>{platform.name}</Text>
         ))}
       </DefinationItems>
       <DefinationItems tilte="metascore">
@@ -18,12 +18,12 @@ const GameAttribute = ({ data }: props) => {
       </DefinationItems>
       <DefinationItems tilte="Genre">
         {data?.genres.map((genre) => (
-          <Text>{genre.name}</Text>
+          <Text key={genre.id}>{genre.name}</Text>
         ))}
       </DefinationItems>
       <DefinationItems tilte="Publishers">
         {data?.publishers.map((publisher) => (
-          <Text>{publisher.name}</Text>
+          <Text key={publisher.id}>{publisher.name}</Text>
         ))}
       </DefinationItems>
     </SimpleGrid>

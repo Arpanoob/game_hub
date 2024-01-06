@@ -24,8 +24,8 @@ function searchBar() {
     }
     if (event.key === "Enter") {
       setSearchQuery(search.current?.value ? search.current.value : undefined);
+      navigate("/");
     }
-    navigate("/");
   };
 
   const clearSearch = () => {

@@ -11,14 +11,14 @@ const GameScreenShots = ({ gameId }: props) => {
       <SimpleGrid>
         {" "}
         {[1, 2, 3, 4, 5, 6].map((p) => (
-          <Skeleton mt={1} height={"200"} />
+          <Skeleton  key={p} mt={1} height={"200"} />
         ))}
       </SimpleGrid>
     );
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }}>
       {data?.results.map((r) => (
-        <Image src={r.image} />
+        <Image key={r.id} src={r.image} />
       ))}
     </SimpleGrid>
   );
