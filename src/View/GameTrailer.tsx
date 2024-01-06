@@ -7,7 +7,6 @@ interface props {
 }
 const GameTrailer = ({ gameId }: props) => {
   const { data, isLoading } = useTrailers(gameId);
-  console.log("vedio", data);
   if (isLoading) return <Skeleton height={"400px"} />;
   return (
     <video

@@ -14,7 +14,6 @@ class AxiosClient<T> {
 
   constructor(endpoint: string) {
     this.endpoint = endpoint;
-    console.log("endpoint", endpoint);
   }
 
   getAll(config: AxiosRequestConfig) {
@@ -24,7 +23,6 @@ class AxiosClient<T> {
         signal: controller.signal,
       })
       .then((res) => {
-        console.log(res);
         return res.data;
       });
   }

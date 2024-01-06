@@ -18,9 +18,7 @@ const GameDetails = () => {
     queryFn: () => ApiClient.get(slug!),
   });
 
-  console.log(isLoading, "is", data);
   if (isLoading) {
-    console.log("loading");
     return <SkeletonForGameDetails />;
   }
 

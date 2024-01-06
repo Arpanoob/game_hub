@@ -7,7 +7,6 @@ interface props {
 }
 const GameScreenShots = ({ gameId }: props) => {
   const { data, isLoading } = useScreenShots(gameId);
-  console.log("aa", data);
   if (isLoading)
     return (
       <SimpleGrid>

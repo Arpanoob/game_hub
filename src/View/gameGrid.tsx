@@ -22,14 +22,6 @@ function GameGrid({
     (total, page) => total + page?.results?.length,
     0
   );
-  console.log(
-    !isLoading && !!!error && !!games?.pages?.length,
-    "fetchedsoFar",
-    fetchedsoFar,
-    games?.pages?.length,
-    !!!error,
-    isLoading
-  );
   return (
     <Box padding={"10px"} overflow={"hidden"}>
       <InfiniteScroll
