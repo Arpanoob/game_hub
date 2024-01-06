@@ -1,6 +1,5 @@
-import React from "react";
+import { Skeleton } from "@chakra-ui/react";
 import useTrailers from "../model/useTrailers";
-import { Skeleton, Spinner } from "@chakra-ui/react";
 
 interface props {
   gameId: number;

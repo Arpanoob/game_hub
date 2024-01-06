@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { plateformm } from "../enteties/plateformm";
+import { useState } from "react";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { GameQuery } from "../enteties/GameQuery";
 import useGameQueryStore from "../model/store/store";
 
 function sortOrder() {

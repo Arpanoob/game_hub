@@ -1,15 +1,16 @@
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { MdCancel } from "react-icons/md";
+import { BsSearch } from "react-icons/bs";
+
 import {
   Input,
   InputGroup,
   InputLeftElement,
   InputRightElement,
 } from "@chakra-ui/react";
-import { useRef, useState } from "react";
-import { BsSearch } from "react-icons/bs";
+
 import useGameQueryStore from "../model/store/store";
-import { useNavigate } from "react-router-dom";
-import { FaCross } from "react-icons/fa";
-import { MdCancel } from "react-icons/md";
 
 function searchBar() {
   const [cross, setCross] = useState(false);

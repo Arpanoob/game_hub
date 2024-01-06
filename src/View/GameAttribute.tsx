@@ -1,4 +1,3 @@
-import React from "react";
 import { Game } from "../enteties/Game";
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import DefinationItems from "./DefinationItems";

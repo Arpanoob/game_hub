@@ -1,5 +1,4 @@
-import React from "react";
-import { Genre } from "../enteties/Genre";
+import { MdHourglassEmpty } from "react-icons/md";
 import {
   Button,
   Card,
@@ -9,15 +8,12 @@ import {
   Image,
   List,
   ListItem,
-  Skeleton,
   SkeletonCircle,
   SkeletonText,
-  Spinner,
-  Text,
 } from "@chakra-ui/react";
+
+import { Genre } from "../enteties/Genre";
 import GetCroppedUrl from "../servises/image_url";
-import { GameQuery } from "../enteties/GameQuery";
-import { MdHourglassEmpty } from "react-icons/md";
 import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
 import useGameQueryStore from "../model/store/store";
 interface props {

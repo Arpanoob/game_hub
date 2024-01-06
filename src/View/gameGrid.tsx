@@ -4,8 +4,6 @@ import GameCard from "../View/gameCard";
 import { UseGamesResult } from "../enteties/GamesResult";
 import SkeletonCard from "./skeletonCard";
 import GameCardContainer from "./gameCardContainer";
-import { MdHourglassEmpty, MdOutlineHourglassEmpty } from "react-icons/md";
-import { FaBatteryEmpty } from "react-icons/fa";
 import empty from "../assets/ONKJBH0.webp";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
