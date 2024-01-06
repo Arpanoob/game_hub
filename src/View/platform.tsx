@@ -7,11 +7,11 @@ import usePlatform from "../model/usePlatform";
 interface props {
   plateforms: FetchGamesResponser<plateformm>;
   error: Error;
+  isLoading: boolean;
 }
 function plaatform({ plateforms, error }: props) {
   const setPlatforms = useGameQueryStore((s) => s.setPlatforms);
   const gameQuery = useGameQueryStore((s) => s.gameQuery);
-
   const chossenPlatform = usePlatform(gameQuery?.platformId as number);
   if (error) return null;
   return (

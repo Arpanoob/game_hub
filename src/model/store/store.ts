@@ -1,4 +1,5 @@
 import { create } from "zustand";
+
 import { GameQyeryStore } from "../../enteties/GameQyeryStore";
 
 const useGameQueryStore = create<GameQyeryStore>((set) => ({

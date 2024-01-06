@@ -1,8 +1,4 @@
-import {
-  FetchNextPageOptions,
-  InfiniteData,
-  InfiniteQueryObserverBaseResult,
-} from "@tanstack/react-query";
+import { InfiniteData } from "@tanstack/react-query";
 import GridLayout from "../View/gridLayout";
 import useGrid from "../model/useGames";
 import { Game } from "../enteties/Game";

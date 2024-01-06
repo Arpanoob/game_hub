@@ -1,8 +1,6 @@
-import React from "react";
 import useGenre from "../model/useGenre";
 import { Genre } from "../enteties/Genre";
 import GenreList from "../View/genreList";
-import { GameQuery } from "../enteties/GameQuery";
 import { FetchGamesResponser } from "../enteties/FetchGamesResponser";
 
 function Genree() {
