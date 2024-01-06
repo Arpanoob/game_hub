@@ -6,7 +6,7 @@ import { Game } from "../enteties/Game";
 import games from "../api/games";
 
 function useGames() {
-  const { gameQuery } = useGameQueryStore();
+  const  gameQuery  = useGameQueryStore(s=>s.gameQuery);
   const {
     data,
     isLoading,
