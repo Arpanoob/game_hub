@@ -1,5 +1,5 @@
 import { InfiniteData } from "@tanstack/react-query";
-import GridLayout from "../View/gridLayout";
+import GridLayout from "../View/pages/GameListing/gridLayout";
 import useGrid from "../model/useGames";
 import { Game } from "../enteties/Game";
 import FetchGamesResponser from "../enteties/FetchGamesResponser";

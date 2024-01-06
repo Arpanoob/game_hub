@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 
-import { Game } from "../enteties/Game";
+import empty from "../../../../assets/thumbs-up.webp";
+import getCroppedUrl from "../../../../servises/image_url";
+import { Game } from "../../../../enteties/Game";
 import PlatformIconsList from "./platformIconsList";
-import CriticScore from "../View/criticScore";
-import getCroppedUrl from "../servises/image_url";
-import empty from "../assets/ONKJBH0.webp";
+import CriticScore from "../../../organism/criticScore";
 import Emoji from "./emoji";
-import { Link } from "react-router-dom";
+
 function gameCard({ game }: { game: Game }) {
   return (
     <Card>

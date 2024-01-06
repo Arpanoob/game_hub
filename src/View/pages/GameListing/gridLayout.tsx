@@ -2,12 +2,12 @@ import React from "react";
 
 import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 
-import GameGrid from "./gameGrid";
-import { UseGamesResult } from "../enteties/GamesResult";
-import Genre from "../viewModel/Genre";
-import Platform from "../viewModel/Platform";
-import SortOrder from "./sortOrder";
-import GameHeading from "./gameHeading";
+import GameGrid from "./components/gameGrid";
+import { UseGamesResult } from "./components/GamesResult";
+import Genre from "../../../viewModel/Genre";
+import Platform from "../../../viewModel/Platform";
+import SortOrder from "./components/sortOrder";
+import GameHeading from "./components/gameHeading";
 
 function gridLayout({
   error,

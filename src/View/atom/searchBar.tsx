@@ -10,7 +10,7 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 
-import useGameQueryStore from "../model/store/store";
+import useGameQueryStore from "../../model/store/store";
 
 function searchBar() {
   const [cross, setCross] = useState(false);

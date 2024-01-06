@@ -1,6 +1,6 @@
 import usePlatform from "../model/usePlatforms";
 import { plateformm } from "../enteties/plateformm";
-import Platform from "../View/platform";
+import Platform from "../View/pages/GameListing/components/platform";
 import FetchGamesResponser from "../enteties/FetchGamesResponser";
 
 function platform() {

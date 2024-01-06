@@ -1,10 +1,10 @@
-import FetchGamesResponser from "./FetchGamesResponser";
+import FetchGamesResponser from "../../../../enteties/FetchGamesResponser";
 import {
   FetchNextPageOptions,
   InfiniteData,
   InfiniteQueryObserverBaseResult,
 } from "@tanstack/react-query";
-import { Game } from "./Game";
+import { Game } from "../../../../enteties/Game";
 
 export interface UseGamesResult {
   games: InfiniteData<FetchGamesResponser<Game>>;

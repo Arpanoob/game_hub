@@ -1,6 +1,6 @@
 import useGenre from "../model/useGenre";
 import { Genre } from "../enteties/Genre";
-import GenreList from "../View/genreList";
+import GenreList from "../View/pages/GameListing/components/genreList";
 import FetchGamesResponser from "../enteties/FetchGamesResponser";
 
 function Genree() {

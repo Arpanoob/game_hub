@@ -1,12 +1,15 @@
+import React from "react";
+
 import { Box, Button, Image, SimpleGrid, Text } from "@chakra-ui/react";
 
-import GameCard from "../View/gameCard";
-import { UseGamesResult } from "../enteties/GamesResult";
+import InfiniteScroll from "react-infinite-scroll-component";
+
+import GameCard from "./gameCard";
+import { UseGamesResult } from "./GamesResult";
 import SkeletonCard from "./skeletonCard";
 import GameCardContainer from "./gameCardContainer";
-import empty from "../assets/ONKJBH0.webp";
-import React from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
+import empty from "../../../../assets/thumbs-up.webp";
+
 function GameGrid({
   error,
   games,

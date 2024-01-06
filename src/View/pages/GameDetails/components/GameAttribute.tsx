@@ -1,7 +1,7 @@
-import { Game } from "../enteties/Game";
+import { Game } from "../../../../enteties/Game";
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import DefinationItems from "./DefinationItems";
-import CriticScore from "./criticScore";
+import CriticScore from "../../../organism/criticScore";
 interface props {
   data?: Game;
 }

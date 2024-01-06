@@ -1,8 +1,8 @@
 import { HStack, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.webp";
-import ColorMode from "./colorMode";
-import SearchBar from "./searchBar";
+import logo from '../../assets/logo.webp';
+import ColorMode from "../atom/colorMode";
+import SearchBar from "../atom/searchBar";
 
 export default function NavigationBar() {
   return (

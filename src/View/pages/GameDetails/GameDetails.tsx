@@ -3,12 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 
 import { Box, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 
-import ExpandableText from "./ExpandableText";
-import GameAttribute from "./GameAttribute";
-import GameTrailer from "./GameTrailer";
-import GameScreenShots from "./GameScreenShots";
-import SkeletonForGameDetails from "./SkeletonForGameDetails";
-import games from "../api/games";
+import games from "../../../api/games";
+
+import ExpandableText from "./components/ExpandableText";
+import GameAttribute from "./components/GameAttribute";
+import GameTrailer from "./components/GameTrailer";
+import GameScreenShots from "./components/GameScreenShots";
+import SkeletonForGameDetails from "./components/SkeletonForGameDetails";
 
 const GameDetails = () => {
   const { slug } = useParams();
