@@ -26,13 +26,13 @@ const GameDetails = () => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
       <GridItem>
-        <Box textAlign="left">
+        <Box marginTop='65px' textAlign="left">
           <Heading>{data?.name}</Heading>
           <ExpandableText>{data?.description_raw} </ExpandableText>{" "}
           <GameAttribute data={data} />
         </Box>
       </GridItem>
-      <GridItem>
+      <GridItem marginTop='65px'>
         <GameTrailer gameId={data.id} />
         <GameScreenShots gameId={data.id} />
       </GridItem>

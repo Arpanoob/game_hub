@@ -19,25 +19,24 @@ function gridLayout({
 }: UseGamesResult) {
   return (
     <div>
-      <Grid
+      <Grid overflow={'hidden'}
         templateAreas={{ lg: `"aside main"`, base: `"main"` }}
-        paddingTop="0px"
-        templateColumns={{ base: "1fr", lg: "200px 1fr" }}
+        paddingTop="45px"
+        templateColumns={{ base: "1fr", lg: "250px 1fr" }}
       >
         <Show above="lg">
-          <GridItem area="aside" paddingX={5}>
+          <GridItem position={'fixed'} zIndex={1000} scrollBehavior={"smooth"} area="aside" >
             <Genre />
           </GridItem>
         </Show>
-        <GridItem area="main">
+        <GridItem  area="main"   >
           <div
             style={{
               display: "flex",
-              marginLeft: "10px",
+              marginLeft: "20px",
               alignSelf: "self-start",
               alignItems: "flex-start",
               flexDirection: "column",
-
               paddingBottom: "30px",
             }}
           >

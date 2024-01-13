@@ -8,7 +8,7 @@ const GameTrailer = ({ gameId }: props) => {
   const { data, isLoading } = useTrailers(gameId);
   if (isLoading) return <Skeleton height={"400px"} />;
   return (
-    <video
+    <video 
       src={data?.results[0]?.data[480]}
       poster={
         data?.results.length !== 0

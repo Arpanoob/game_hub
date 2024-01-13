@@ -25,7 +25,7 @@ function GameGrid({
   );
   // console.log("as", games.pages, !games.pages.res);
   return (
-    <Box padding={"10px"} overflow={"hidden"}>
+    <Box padding={"10px"} >
       <InfiniteScroll
         dataLength={fetchedsoFar || 0} //it takle total number of card so far
         hasMore={hasNextPage} //IT TAKE BOOLEAN VALUE WITCH TELL TERE BARE MORE OR NOT
